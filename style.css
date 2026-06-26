@@ -1,178 +1,111 @@
-/* Importando uma fonte moderna e legível */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
 :root {
-    --bg-color: #121214; /* Fundo escuro moderno */
-    --surface-color: #202024; /* Cor dos cartões (um pouco mais clara que o fundo) */
-    --text-color: #e1e1e6; /* Cinza bem claro, mais confortável que o branco puro */
-    --accent-color: #fbd733; /* Amarelo vibrante para botões e destaques */
+    --bg-main: #121214;
+    --bg-sidebar: #1a1a1e;
+    --bg-card: #202024;
+    --text-color: #e1e1e6;
+    --accent-color: #fbd733;
     --accent-hover: #ffea5c;
-    --focus-color: #00e8c8; /* Ciano para foco do teclado */
-    --radius: 12px; /* Cantos arredondados */
+    --focus-outline: #00e8c8;
+    --radius: 12px;
 }
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
-    background-color: var(--bg-color);
+    background-color: var(--bg-main);
     color: var(--text-color);
     font-family: 'Poppins', sans-serif;
-    font-size: 1.15rem;
-    line-height: 1.7;
-}
-
-/* Classe de acessibilidade invisível */
-.sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    height: 100vh;
     overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    border: 0;
 }
 
+.sr-only {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0, 0, 0, 0); border: 0;
+}
 .sr-only:focus {
-    position: static;
-    width: auto;
-    height: auto;
-    background-color: var(--accent-color);
-    color: #000;
-    padding: 15px;
-    display: block;
-    text-align: center;
-    font-weight: bold;
-    border-radius: var(--radius);
-    margin: 20px;
+    position: fixed; top: 10px; left: 10px; z-index: 9999;
+    background-color: var(--accent-color); color: #000; padding: 15px;
+    font-weight: bold; border-radius: var(--radius); display: block;
 }
 
-header {
-    background-color: var(--surface-color);
-    padding: 30px 20px;
-    text-align: center;
-    border-bottom: 4px solid var(--accent-color);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+.plataforma-container { display: flex; height: 100vh; width: 100vw; }
+
+.sidebar-curso {
+    width: 320px; background-color: var(--bg-sidebar);
+    border-right: 4px solid var(--accent-color);
+    display: flex; flex-direction: column; flex-shrink: 0;
+}
+.sidebar-header { padding: 20px; border-bottom: 1px solid #29292e; }
+.sidebar-header h1 { font-size: 1.4rem; color: var(--accent-color); }
+.meta-curso { font-size: 0.85rem; color: #8d8d99; margin-top: 5px; }
+
+.menu-curso { flex: 1; overflow-y: auto; padding: 15px 10px; }
+.menu-curso ul { list-style: none; }
+.menu-curso li { margin-bottom: 8px; }
+
+.menu-curso button {
+    width: 100%; background-color: transparent; border: 2px solid transparent;
+    color: var(--text-color); padding: 12px; text-align: left;
+    font-size: 0.95rem; font-family: inherit; font-weight: 600;
+    cursor: pointer; border-radius: var(--radius); display: flex;
+    align-items: center; gap: 10px; transition: all 0.2s ease;
+}
+.menu-curso button:hover { background-color: rgba(255, 255, 255, 0.05); color: var(--accent-color); }
+.menu-curso button[aria-current="step"] { background-color: var(--accent-color); color: #121214; }
+
+.conteudo-aula { flex: 1; padding: 40px; overflow-y: auto; }
+.secao-aula { display: none; }
+.secao-aula.ativa { display: block; animation: fadeIn 0.3s ease; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-h1 {
-    color: var(--accent-color);
-    font-size: 2rem;
-    margin-bottom: 15px;
-}
+.secao-aula h2 { font-size: 2rem; color: var(--accent-color); margin-bottom: 25px; outline: none; }
+.card-texto { background-color: var(--bg-card); padding: 30px; border-radius: var(--radius); box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
+.card-texto p { margin-bottom: 15px; }
+.card-texto h3 { color: #fff; margin: 20px 0 10px 0; font-size: 1.3rem; }
+.card-texto ul, .card-texto ol { margin-left: 25px; margin-bottom: 20px; }
+.card-texto li { margin-bottom: 8px; }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 15px;
-}
+.curiosidade-box { background-color: rgba(251, 215, 51, 0.08); border-left: 5px solid var(--accent-color); padding: 15px; border-radius: 0 var(--radius) var(--radius) 0; margin-top: 20px; }
 
-nav a {
-    color: var(--text-color);
-    text-decoration: none;
-    font-weight: 600;
-    padding: 10px 20px;
-    background-color: rgba(255, 255, 255, 0.05);
-    border-radius: 30px;
-    transition: all 0.3s ease;
-}
-
-nav a:hover {
-    background-color: var(--accent-color);
-    color: #000;
-}
-
-/* Foco de teclado elegante */
-a:focus, button:focus, input:focus, audio:focus {
-    outline: 3px solid var(--focus-color);
-    outline-offset: 4px;
-}
-
-main {
-    padding: 40px 20px;
-    max-width: 900px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 30px; /* Espaço entre as seções */
-}
-
-/* Transformando as seções em Cartões (Cards) modernos */
-section {
-    background-color: var(--surface-color);
-    padding: 30px;
-    border-radius: var(--radius);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    border-left: 5px solid var(--accent-color);
-}
-
-h2 {
-    color: var(--accent-color);
-    margin-bottom: 20px;
-    font-size: 1.8rem;
-}
-
-h3 {
-    margin-top: 20px;
-    margin-bottom: 10px;
-    color: #fff;
-}
-
-ul, ol {
-    margin-left: 20px;
-    margin-bottom: 20px;
-}
-
-li {
-    margin-bottom: 10px;
-}
-
-hr {
-    display: none; /* Removemos a linha feia, pois agora usamos cards separados */
-}
-
-blockquote {
-    background-color: rgba(251, 215, 51, 0.1);
-    border-left: 5px solid var(--accent-color);
-    padding: 20px;
-    border-radius: 0 var(--radius) var(--radius) 0;
-    margin: 20px 0;
-    font-style: italic;
-}
-
-/* Botões modernos com efeito flutuante */
 .btn-leitura {
-    background-color: var(--accent-color);
-    color: #121214;
-    border: none;
-    padding: 15px 25px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 30px;
-    margin-top: 15px;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(251, 215, 51, 0.2);
+    background-color: #29292e; color: var(--accent-color); border: 2px solid var(--accent-color);
+    padding: 10px 20px; font-size: 1rem; font-weight: bold; cursor: pointer;
+    border-radius: 30px; margin: 10px 0; display: inline-flex; align-items: center; gap: 8px; transition: all 0.2s;
 }
+.btn-leitura:hover { background-color: var(--accent-color); color: #121214; }
 
-.btn-leitura:hover {
-    background-color: var(--accent-hover);
-    transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(251, 215, 51, 0.4);
-}
+.box-imagem img { max-width: 100%; height: auto; margin-top: 20px; border-radius: var(--radius); border: 2px solid #3e3e42; }
 
-img {
-    max-width: 100%;
-    border-radius: var(--radius);
-    margin-top: 20px;
-    border: 2px solid #333;
+/* Configurações do Quiz */
+fieldset { border: 2px solid #3e3e42; padding: 15px; margin-bottom: 15px; border-radius: var(--radius); }
+legend { color: var(--accent-color); padding: 0 10px; font-weight: bold; font-size: 1.1rem; }
+fieldset label { display: inline-block; margin: 8px 0; cursor: pointer; width: 100%; }
+fieldset input[type="radio"] { margin-right: 10px; transform: scale(1.2); }
+
+.btn-enviar { background-color: var(--accent-color); color: #121214; border: none; padding: 12px 25px; font-size: 1rem; font-weight: bold; border-radius: 30px; cursor: pointer; margin-top: 5px; }
+.btn-enviar:hover { background-color: var(--accent-hover); }
+
+.resultado-box-mensagem { margin-top: 15px; padding: 15px; border-radius: var(--radius); font-weight: bold; display: none; }
+.resultado-box-mensagem.sucesso { display: block; background-color: #04d361; color: #fff; }
+.resultado-box-mensagem.erro { display: block; background-color: #c53030; color: #fff; }
+
+.atividade-pratica-box { margin-top: 30px; padding-top: 20px; border-top: 2px dashed #3e3e42; }
+.atividade-pratica-box h3 { margin-top: 15px; }
+
+button:focus, a:focus, input:focus { outline: 3px solid var(--focus-outline); outline-offset: 3px; }
+
+@media (max-width: 768px) {
+    .plataforma-container { flex-direction: column; }
+    .sidebar-curso { width: 100%; height: auto; border-right: none; border-bottom: 4px solid var(--accent-color); }
+    body { overflow: auto; height: auto; }
+    .conteudo-aula { overflow-y: visible; padding: 20px; }
 }
