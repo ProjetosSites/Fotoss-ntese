@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=2.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plataforma Inclusiva - Curso de Fotossíntese Completo</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
@@ -21,47 +21,136 @@
             
             <nav aria-label="Menu de Aulas" class="menu-curso">
                 <ul>
-                    <li><button onclick="mudarAula('inicio')" id="btn-inicio" aria-current="step">📖 Pág 1: Início</button></li>
-                    <li><button onclick="mudarAula('diagnostico')" id="btn-diagnostico">👥 Pág 2: Diagnóstico</button></li>
-                    <li><button onclick="mudarAula('modulo1')" id="btn-modulo1">🌱 Pág 3: Módulo 1</button></li>
-                    <li><button onclick="mudarAula('modulo2')" id="btn-modulo2">🔬 Pág 4: Módulo 2</button></li>
-                    <li><button onclick="mudarAula('modulo3')" id="btn-modulo3">🌍 Pág 5: Módulo 3</button></li>
-                    <li><button onclick="mudarAula('curiosidades')" id="btn-curiosidades">💡 Pág 6: Curiosidades</button></li>
-                    <li><button onclick="mudarAula('atividades')" id="btn-atividades">📝 Pág 7: Atividades</button></li>
-                    <li><button onclick="mudarAula('tecnologias')" id="btn-tecnologias">♿ Pág 8: Tech Assistivas</button></li>
-                    <li><button onclick="mudarAula('dua')" id="btn-dua">🎯 Pág 9: DUA</button></li>
-                    <li><button onclick="mudarAula('referencias')" id="btn-referencias">📚 Pág 10: Referências</button></li>
+                    <!-- ESTRUTURA CONFORME O PDF -->
+                    <li><button onclick="mudarAula('modulo1')" id="btn-modulo1" aria-current="step">📖 Módulo 1 - Introdução</button></li>
+                    <li><button onclick="mudarAula('modulo2')" id="btn-modulo2">⚙️ Módulo 2 - Conceitos Principais</button></li>
+                    <li><button onclick="mudarAula('modulo3')" id="btn-modulo3">🍎 Módulo 3 - Aplicações Práticas</button></li>
+                    <li><button onclick="mudarAula('modulo4')" id="btn-modulo4">💡 Módulo 4 - Curiosidades</button></li>
+                    
+                    <!-- PÁGINAS COMPLEMENTARES E OBRIGATÓRIAS -->
+                    <li><button onclick="mudarAula('atividades')" id="btn-atividades">📝 Atividades</button></li>
+                    <li><button onclick="mudarAula('diagnostico')" id="btn-diagnostico">👥 Diagnóstico</button></li>
+                    <li><button onclick="mudarAula('tecnologias')" id="btn-tecnologias">♿ Tech Assistivas</button></li>
+                    <li><button onclick="mudarAula('dua')" id="btn-dua">🎯 DUA</button></li>
+                    <li><button onclick="mudarAula('referencias')" id="btn-referencias">📚 Referências</button></li>
                 </ul>
             </nav>
         </aside>
 
         <main id="conteudo-principal" class="conteudo-aula">
             
-            <section id="inicio" class="secao-aula ativa">
-                <h2>Bem-vindo!</h2>
-                <button class="btn-leitura" onclick="tocarAudioReal('inicio.mp3')">🔊 Ouvir Texto</button>
-
+            <!-- MÓDULO 1: INTRODUÇÃO -->
+            <section id="modulo1" class="secao-aula ativa">
+                <h2>Módulo 1 – Introdução: O que é Fotossíntese?</h2>
+                <button class="btn-leitura" onclick="tocarAudioReal('modulo1.mp3', this)">🔊 Ouvir Texto</button>
                 <div class="card-texto">
-                    <p>Este site foi desenvolvido para ensinar o conteúdo de Fotossíntese de maneira acessível e inclusiva para estudantes com deficiência visual. Aqui você encontrará textos claros, descrições de imagens, áudios explicativos, atividades e recursos que facilitam a aprendizagem.</p>
-                    <h3>Tema</h3><p>Fotossíntese</p>
-                    <h3>Público-alvo</h3><p>Alunos do 7º ano do Ensino Fundamental com deficiência visual (cegueira ou baixa visão).</p>
-                    <h3>Objetivos de Aprendizagem</h3>
+                    <p>Este site foi desenvolvido para ensinar o conteúdo de Fotossíntese de maneira acessível e inclusiva para estudantes com deficiência visual (cegueira ou baixa visão).</p>
+                    
+                    <h3>Apresentação do Tema</h3>
+                    <p>Você já parou para pensar que as plantas não têm boca e não comem como nós? Em vez disso, elas têm um superpoder incrível: elas fabricam a sua própria comida!</p>
+                    <p>Esse processo mágico e natural se chama <strong>fotossíntese</strong>. É através dele que as plantas conseguem energia para crescerem fortes e saudáveis, utilizando apenas ingredientes simples que encontram na natureza: a luz do sol, a água da terra e o ar que as rodeia.</p>
+                </div>
+            </section>
+
+            <!-- MÓDULO 2: CONCEITOS PRINCIPAIS (Toda a explicação unificada aqui) -->
+            <section id="modulo2" class="secao-aula">
+                <h2>Módulo 2 – Conceitos Principais: A Fábrica da Planta</h2>
+                <button class="btn-leitura" onclick="tocarAudioReal('modulo2.mp3', this)">🔊 Ouvir Texto</button>
+                <div class="card-texto">
+                    <p>Para entender a fotossíntese, imagine que cada folha de uma planta é uma pequena <strong>fábrica</strong>. Para funcionar, essa fábrica trabalha em duas etapas principais:</p>
+                    
+                    <h3>1ª Etapa: Carregando as Baterias (A Fase da Luz)</h3>
+                    <p>Nesta primeira etapa, a fábrica precisa de energia para ligar as máquinas.</p>
                     <ul>
-                        <li>Compreender o que é a fotossíntese.</li>
-                        <li>Identificar os elementos necessários para que ela aconteça.</li>
-                        <li>Explicar a importância da fotossíntese para os seres vivos.</li>
-                        <li>Relacionar a fotossíntese com a produção de oxigênio e alimentos.</li>
+                        <li><strong>A energia do Sol:</strong> Quando a luz do sol bate na folha, ela agita pequenas partículas lá dentro, enchendo-as de energia.</li>
+                        <li><strong>A quebra da água:</strong> Ao mesmo tempo, a planta puxa água lá do fundo da terra pelas raízes. A fábrica pega essa água e a "quebra" em pedaços.</li>
+                        <li><strong>O presente para nós:</strong> Quando a planta quebra a água, ela libera um gás no ar: o oxigênio. É exatamente esse oxigênio que nós usamos para respirar!</li>
+                        <li><strong>Guardando a energia:</strong> Toda a energia capturada do sol e da quebra da água é guardada em "baterias" minúsculas (os cientistas chamam essas baterias de moléculas de ATP e NADPH). Nesta etapa, a comida da planta ainda não está pronta, mas as baterias da fábrica estão 100% carregadas.</li>
                     </ul>
-                    <h3>Justificativa</h3>
-                    <p>A fotossíntese é um dos processos mais importantes da natureza, pois permite que as plantas produzam seu próprio alimento e liberem oxigênio para a atmosfera.</p>
-                    <p>Este site foi desenvolvido seguindo princípios de acessibilidade, utilizando recursos como audiodescrição, textos alternativos e conteúdo compatível com leitores de tela, garantindo que estudantes com deficiência visual tenham acesso ao conhecimento em igualdade de condições.</p>
+
+                    <h3>2ª Etapa: A Receita do Açúcar (O Ciclo de Calvin)</h3>
+                    <p>Agora que as máquinas têm energia, é hora de fazer a comida. Esta etapa é conhecida como Ciclo de Calvin.</p>
+                    <ul>
+                        <li><strong>Pegando o ar:</strong> A planta puxa do ar que a rodeia um gás chamado gás carbônico (CO2).</li>
+                        <li><strong>Misturando os ingredientes:</strong> Usando a energia daquelas "baterias" que carregou na primeira etapa, a fábrica começa a misturar o gás carbônico com outras substâncias que já existem dentro da folha. É como se ela estivesse batendo a massa de um bolo.</li>
+                        <li><strong>A comida está pronta!</strong> Depois de misturar tudo, o resultado final é o açúcar (que pode ser chamado de sacarose ou amido). Esse açúcar é o alimento da planta. É ele que dá força para ela crescer, dar flores e gerar frutos.</li>
+                    </ul>
+
+                    <blockquote class="curiosidade-box">
+                        <strong>Resumindo a mágica:</strong> A planta usa a energia do sol e a água da terra para carregar suas baterias e soltar oxigênio no ar. Depois, usa essas baterias e o gás do ar para fabricar o seu próprio alimento doce. É assim que elas crescem e ajudam a manter todo o nosso planeta vivo!
+                    </blockquote>
+
+                    <div class="box-imagem">
+                        <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=600&q=80" alt="Ilustração lúdica de uma folha de árvore estilizada como uma pequena e amigável fábrica biológica. Raios solares dourados tocam a superfície da folha e pequenas engrenagens verdes representam a produção interna de energia.">
+                    </div>
+                </div>
+            </section>
+
+            <!-- MÓDULO 3: APLICAÇÕES PRÁTICAS -->
+            <section id="modulo3" class="secao-aula">
+                <h2>Módulo 3 – Aplicações Práticas: A Fotossíntese no nosso Dia a Dia</h2>
+                <button class="btn-leitura" onclick="tocarAudioReal('modulo3.mp3', this)">🔊 Ouvir Texto</button>
+                <div class="card-texto">
+                    <p>A fotossíntese não acontece apenas de forma invisível; ela afeta o seu dia a dia o tempo todo! Veja alguns exemplos práticos do cotidiano:</p>
+                    <ul>
+                        <li><strong>Quando você come uma fruta:</strong> A doçura de uma maçã ou de uma manga vem do açúcar que a planta fabricou durante a fotossíntese.</li>
+                        <li><strong>Quando você respira ar puro:</strong> Sabe aquela sensação boa de respirar fundo perto de muitas árvores? Aquele oxigênio fresquinho foi liberado pelas plantas enquanto elas "quebravam a água" na primeira etapa.</li>
+                        <li><strong>A madeira dos móveis:</strong> O corpo da árvore, que forma a madeira usada para fazer mesas e cadeiras, é construído usando o alimento que a planta gerou pela fotossíntese ao longo de anos.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- MÓDULO 4: CURIOSIDADES -->
+            <section id="modulo4" class="secao-aula">
+                <h2>Módulo 4 – Curiosidades</h2>
+                <button class="btn-leitura" onclick="tocarAudioReal('Curiosidades.mp3', this)">🔊 Ouvir Texto</button>
+                <div class="card-texto">
+                    <ul>
+                        <li>As algas marinhas, que vivem no fundo do oceano, também fazem fotossíntese e são responsáveis por produzir a maior parte do oxigênio que respiramos no planeta!</li>
+                        <li>A Amazônia possui uma enorme diversidade de plantas que realizam fotossíntese, ajudando a regular o clima de toda a Terra.</li>
+                        <li>No outono, algumas árvores param de fazer fotossíntese por causa do frio. É por isso que as folhas perdem a cor verde, ficam secas e caem.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- PÁGINAS COMPLEMENTARES -->
+            <section id="atividades" class="secao-aula">
+                <h2>Atividades</h2>
+                <button class="btn-leitura" onclick="lerTextoAtual('atividades')">🔊 Ouvir Atividades</button>
+                <div class="card-texto">
+                    <h3>Questões Objetivas</h3>
+                    <form id="quiz-form" onsubmit="validarQuiz(event)">
+                        <fieldset>
+                            <legend>1. Como podemos imaginar o interior de uma folha de planta com base no Módulo 2?</legend>
+                            <label><input type="radio" name="q1" value="A" required> Como uma garagem de carros antiga</label><br>
+                            <label><input type="radio" name="q1" value="B"> Como uma pequena fábrica de alimentos</label><br>
+                            <label><input type="radio" name="q1" value="C"> Como uma nuvem passageira de chuva</label>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>2. Na 1ª Etapa (Fase da Luz), qual é o "presente" que a planta libera no ar para nós respirarmos?</legend>
+                            <label><input type="radio" name="q2" value="A" required> Gás carbônico</label><br>
+                            <label><input type="radio" name="q2" value="B"> Oxigênio</label><br>
+                            <label><input type="radio" name="q2" value="C"> Vapor de água quente</label>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>3. Segundo o Módulo 3 (Aplicações Práticas), de onde vem a doçura de uma fruta que comemos?</legend>
+                            <label><input type="radio" name="q3" value="A" required> Do açúcar fabricado pela planta na fotossíntese</label><br>
+                            <label><input type="radio" name="q3" value="B"> De sais minerais salgados da terra</label><br>
+                            <label><input type="radio" name="q3" value="C"> Do oxigênio armazenado nas raízes</label>
+                        </fieldset>
+
+                        <button type="submit" class="btn-enviar">Verificar Respostas</button>
+                    </form>
+
+                    <div id="resultado-quiz" aria-live="polite" class="resultado-box-mensagem"></div>
                 </div>
             </section>
 
             <section id="diagnostico" class="secao-aula">
-                <h2>Página 2 – Diagnóstico do Público</h2>
-                <button class="btn-leitura" onclick="tocarAudioReal('diagnostico.mp3')">🔊 Ouvir Diagnóstico </button>
-
+                <h2>Diagnóstico do Público</h2>
+               <button class="btn-leitura" onclick="tocarAudioReal('diagnostico.mp3', this)">🔊 Ouvir Texto</button>
                 <div class="card-texto">
                     <h3>Características do Público</h3>
                     <p>Os estudantes com deficiência visual podem apresentar cegueira total ou baixa visão. Para favorecer a aprendizagem, é importante utilizar recursos acessíveis que permitam compreender o conteúdo sem depender apenas das imagens.</p>
@@ -76,138 +165,38 @@
                 </div>
             </section>
 
-            <section id="modulo1" class="secao-aula">
-                <h2>Página 3 – Módulo 1: O que é Fotossíntese?</h2>
-                <button class="btn-leitura" onclick="tocarAudioReal('modulo1.mp3')">🔊 Ouvir Módulo 1</button>
-
-                <div class="card-texto">
-                    <p>A fotossíntese é o processo pelo qual as plantas produzem seu próprio alimento utilizando a luz do Sol, a água absorvida pelas raízes e o gás carbônico presente no ar.</p>
-                    <p>Como resultado desse processo, a planta produz glicose, que serve como alimento, e libera oxigênio para a atmosfera.</p>
-                    <div class="box-imagem">
-                        <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=600&q=80" alt="Imagem de uma árvore verde recebendo luz do Sol. As raízes absorvem água do solo, as folhas recebem gás carbônico do ar e liberam oxigênio para a atmosfera.">
-                    </div>
-                </div>
-            </section>
-
-            <section id="modulo2" class="secao-aula">
-                <h2>Página 4 – Módulo 2: Como acontece a Fotossíntese?</h2>
-                <button class="btn-leitura" onclick="tocarAudioReal('modulo2.mp3')">🔊 Ouvir Módulo 2</button>
-
-                <div class="card-texto">
-                    <p>A fotossíntese ocorre principalmente nas folhas das plantas. Ela acontece em quatro etapas:</p>
-                    <ol>
-                        <li>A planta absorve água pelas raízes.</li>
-                        <li>As folhas recebem gás carbônico.</li>
-                        <li>A luz do Sol fornece energia.</li>
-                        <li>A planta produz alimento e libera oxigênio.</li>
-                    </ol>
-                    <blockquote class="curiosidade-box">
-                        <strong>Curiosidade:</strong> Uma única árvore adulta pode produzir oxigênio suficiente para beneficiar muitas pessoas ao longo do ano.
-                    </blockquote>
-                </div>
-            </section>
-
-            <section id="modulo3" class="secao-aula">
-                <h2>Página 5 – Módulo 3: Importância da Fotossíntese</h2>
-                <button class="btn-leitura" onclick="tocarAudioReal('modulo3.mp3')">🔊 Ouvir Módulo 3</button>
-
-                <div class="card-texto">
-                    <p>A fotossíntese é essencial para a vida na Terra porque produz oxigênio, fornece alimento para as plantas e sustenta toda a cadeia alimentar.</p>
-                    <p>Sem esse processo, os seres vivos não teriam oxigênio suficiente para respirar.</p>
-                </div>
-            </section>
-
-            <section id="curiosidades" class="secao-aula">
-                <h2>Página 6 – Curiosidades</h2>
-                <button class="btn-leitura" onclick="tocarAudioReal('Curiosidades.mp3')">🔊 Ouvir Curiosidades</button>
-                <div class="card-texto">
-                    <ul>
-                        <li>As plantas fabricam seu próprio alimento.</li>
-                        <li>A Amazônia possui uma enorme diversidade de plantas que realizam fotossíntese.</li>
-                        <li>O oxigênio liberado pelas plantas é fundamental para a vida.</li>
-                    </ul>
-                </div>
-            </section>
-
-            <section id="atividades" class="secao-aula">
-                <h2>Página 7 – Atividades</h2>
-                <button class="btn-leitura" onclick="lerTextoAtual('atividades')">🔊 Ouvir Atividades</button>
-                <div class="card-texto">
-                    <h3>Questões Objetivas</h3>
-                    <form id="quiz-form" onsubmit="validarQuiz(event)">
-                        <fieldset>
-                            <legend>1. O que é fotossíntese?</legend>
-                            <label><input type="radio" name="q1" value="A" required> Respiração das plantas</label><br>
-                            <label><input type="radio" name="q1" value="B"> Processo pelo qual as plantas produzem seu alimento</label><br>
-                            <label><input type="radio" name="q1" value="C"> Reprodução das plantas</label>
-                        </fieldset>
-
-                        <fieldset>
-                            <legend>2. Qual é a principal fonte de energia da fotossíntese?</legend>
-                            <label><input type="radio" name="q2" value="A" required> Lua</label><br>
-                            <label><input type="radio" name="q2" value="B"> Sol</label><br>
-                            <label><input type="radio" name="q2" value="C"> Chuva</label>
-                        </fieldset>
-
-                        <fieldset>
-                            <legend>3. Qual gás é liberado durante a fotossíntese?</legend>
-                            <label><input type="radio" name="q3" value="A" required> Oxigênio</label><br>
-                            <label><input type="radio" name="q3" value="B"> Nitrogênio</label><br>
-                            <label><input type="radio" name="q3" value="C"> Hidrogênio</label>
-                        </fieldset>
-
-                        <button type="submit" class="btn-enviar">Verificar Respostas</button>
-                    </form>
-
-                    <div id="resultado-quiz" aria-live="polite" class="resultado-box-mensagem"></div>
-
-                    <div class="atividade-pratica-box">
-                        <h3>Questões Discursivas</h3>
-                        <p>1. Explique, com suas palavras, por que a fotossíntese é importante.</p>
-                        <p>2. Como a fotossíntese contribui para a vida na Terra?</p>
-                        
-                        <h3>Atividade Prática</h3>
-                        <p>Ouça o áudio da aula e grave uma resposta explicando como acontece a fotossíntese.</p>
-                        
-                        <h3>Desafio Inclusivo</h3>
-                        <p>Depois de ouvir a explicação, grave um áudio de até dois minutos contando todas as etapas da fotossíntese.</p>
-                    </div>
-                </div>
-            </section>
-
             <section id="tecnologias" class="secao-aula">
-                <h2>Página 8 – Tecnologias Assistivas</h2>
+                <h2>Tecnologias Assistivas</h2>
                 <button class="btn-leitura" onclick="lerTextoAtual('tecnologias')">🔊 Ouvir Texto</button>
                 <div class="card-texto">
                     <p>Este site utiliza as seguintes tecnologias integradas e diretrizes:</p>
                     <ul>
-                        <li><strong>audiodescrição:</strong> narrações estruturadas para contextualização;</li>
-                        <li><strong>textos alternativos nas imagens:</strong> tags 'alt' descritivas legíveis por máquinas;</li>
-                        <li><strong>compatibilidade com leitores de tela:</strong> código limpo estruturado semanticamente.</li>
+                        <li><strong>Audiodescrição:</strong> narrações estruturadas para contextualização;</li>
+                        <li><strong>Textos alternativos:</strong> tags 'alt' descritivas legíveis por máquinas;</li>
+                        <li><strong>Compatibilidade:</strong> código limpo e com foco de teclado (outline).</li>
                     </ul>
                 </div>
             </section>
 
             <section id="dua" class="secao-aula">
-                <h2>Página 9 – Desenho Universal para Aprendizagem (DUA)</h2>
-                <button class="btn-leitura" onclick="lerTextoAtual('dua')">🔊 Ouvir Diretrizes DUA</button>
+                <h2>Desenho Universal para Aprendizagem (DUA)</h2>
+                <button class="btn-leitura" onclick="lerTextoAtual('dua')">🔊 Ouvir Diretrizes</button>
                 <div class="card-texto">
-                    <p><strong>Múltiplas formas de representação:</strong><br>O conteúdo é apresentado em texto, áudio e imagens com descrição.</p>
-                    <p><strong>Múltiplas formas de ação e expressão:</strong><br>O estudante responde por escrito ou por gravação de áudio.</p>
-                    <p><strong>Múltiplas formas de engajamento:</strong><br>São utilizados curiosidades, atividades interativas e desafios para motivar a aprendizagem.</p>
+                    <p><strong>Múltiplas formas de representação:</strong> O conteúdo é apresentado em texto, áudio e imagens descritas.</p>
+                    <p><strong>Múltiplas formas de ação e expressão:</strong> O estudante tem alternativas para responder de forma autônoma.</p>
+                    <p><strong>Múltiplas formas de engajamento:</strong> Uso de metáforas (fábrica), curiosidades e aplicações práticas no dia a dia para motivar a aprendizagem.</p>
                 </div>
             </section>
 
             <section id="referencias" class="secao-aula">
-                <h2>Página 10 – Referências</h2>
+                <h2>Referências</h2>
                 <button class="btn-leitura" onclick="lerTextoAtual('referencias')">🔊 Ouvir Referências</button>
                 <div class="card-texto">
                     <ul>
-                        <li>Livro de Ciências do 7º ano.</li>
-                        <li>Ministério da Educação.</li>
-                        <li>Imagens de bancos gratuitos com descrição.</li>
-                        <li>Google Sites.</li>
-                        <li>Google Forms.</li>
+                        <li>Livro de Ciências do 7º ano do Ensino Fundamental.</li>
+                        <li>Diretrizes de Acessibilidade do Ministério da Educação.</li>
+                        <li>Imagens de bancos gratuitos (Unsplash).</li>
+                        <li><a href="https://share.google/zMKHZeiZoon4rh0cn" target="_blank" rel="noopener noreferrer">Acesso aos Arquivos do Projeto</a></li>
                     </ul>
                 </div>
             </section>
